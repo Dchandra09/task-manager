@@ -1,0 +1,19 @@
+version: '3'
+services:
+  backend:
+    #networks:
+     # - mynetwork
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  frontend:
+    #networks:
+     # - mynetwork
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080" # Map to a different port since Tomcat is using 8080
